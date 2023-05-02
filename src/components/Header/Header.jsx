@@ -17,6 +17,7 @@ const Header = () => {
                         <div className='d-flex align-items-center'>
                             <Link className='navWord'>User</Link>
                             <Link className='navWord' to='/login'>login</Link>
+                            <Link className='navWord' to='/register'>Register</Link>
                         </div>
                     </nav>
                         <hr />

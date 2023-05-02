@@ -1,10 +1,27 @@
 import React from 'react';
-import './Header.css'
+import './Header.css';
+import { Container, Nav, Navbar } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
         <div>
-            <h2>This is Header</h2>
+           
+                <Container>
+                    <nav className='d-flex justify-content-between align-items-center m-auto '>
+                        <Link className='navWord'><h4>Chef By Nature</h4></Link>
+                        <div>
+                            <Link className='navWord' to='/'>Home</Link>
+                            <Link className='navWord' to='/blog'>Blog</Link>
+                        </div>
+                        <div className='d-flex align-items-center'>
+                            <Link className='navWord'>User</Link>
+                            <Link className='navWord' to='/login'>login</Link>
+                        </div>
+                    </nav>
+                        <hr />
+                </Container>
+         
         </div>
     );
 };

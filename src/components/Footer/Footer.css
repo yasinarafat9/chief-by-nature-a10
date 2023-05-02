@@ -1,0 +1,17 @@
+footer{
+    color: white;
+}
+.footer-bg{
+    margin: 100px auto;
+    padding: 100px auto;
+    background-color: rgb(43, 40, 40);
+    height: fit-content;
+
+}
+.logos-bg{
+    background-color: rgb(17, 17, 17);
+}
+footer img{
+    width: 390px;
+    opacity: 50%;
+}

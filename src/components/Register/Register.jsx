@@ -19,11 +19,11 @@ const Register = () => {
                     <input className='input-field' type="email" name='email' id='email' placeholder='Enter your email' />
 
                     <input className='input-field' type="password" name='password' id='password' placeholder=' Enter your password' />
-                    <br />
+                    <button className='btn btn-primary my-3'>Register</button>
 
                     <div>
                     <p>Already have an Account? </p>
-                    <Link className='btn btn-link' to="/login"> Log In</Link>
+                    <Link className='btn btn-link mt-0 pt-0' to="/login"> Log In</Link>
 
                     </div>
                 </form>

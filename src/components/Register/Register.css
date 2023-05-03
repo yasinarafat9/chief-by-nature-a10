@@ -1,3 +1,4 @@
+
 .full-page {
     margin: 0px auto;
     padding: 0px auto;
@@ -18,8 +19,8 @@
 .register-card {
     padding: 50px;
     margin: 150px auto;
-    background-color: blanchedalmond;
-    height: 400px;
+    background-color: rgb(205, 227, 255);
+    height: 470px;
     width: 400px;
-    box-shadow: -10px 10px 1px rgb(41, 40, 40);
+    box-shadow: -10px 10px 1px rgb(0, 110, 255);
 }

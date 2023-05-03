@@ -1,0 +1,25 @@
+.full-page {
+    margin: 0px auto;
+    padding: 0px auto;
+    /* background-color: green; */
+    width: 1100px;
+    height: 1000px;
+}
+
+.input-field {
+    height: 40px;
+    font-size: 20px;
+    margin: 10px auto;
+    text-align: center;
+
+}
+
+
+.login-card {
+    padding: 50px;
+    margin: 150px auto;
+    background-color: rgb(205, 227, 255);
+    height: 400px;
+    width: 400px;
+    box-shadow: -10px 10px 1px rgb(0, 110, 255);
+}

@@ -91,7 +91,7 @@ const Register = () => {
                         <p className='my-1'> <small>Or Register using...</small></p>
                         <FaGoogle onClick={handleGoogle} className='fs-2 mx-2 text-danger' />
                         <FaGithub className='fs-2 mx-2' />
-                        <img src={userImg} alt="" />
+                        <img className='user-img  mx-2' src={userImg} alt="" />
                     </div>
                 </form>
 

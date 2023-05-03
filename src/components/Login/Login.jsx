@@ -45,8 +45,7 @@ const Login = () => {
                 const credential = GoogleAuthProvider.credentialFromResult(result);
                 // const token = credential.accessToken;
                 const user = result.user;
-                console.log(user.photoURL
-                    )
+                console.log(user.photoURL)
                     setUserImg(user.photoURL)
             }).catch((error) => {
                 console.log('error', error.message)
@@ -83,7 +82,7 @@ const Login = () => {
                         <p className='my-1'> <small>Or Log In using...</small></p>
                         <FaGoogle onClick={handleGoogle} className='fs-2 mx-2 text-danger' />
                         <FaGithub className='fs-2 mx-2' />
-                        <img src={userImg} alt="" />
+                        <img className='user-img  mx-2' src={userImg} alt="" />
                     </div>
                 </form>
             </div>

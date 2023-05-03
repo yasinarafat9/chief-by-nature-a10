@@ -6,10 +6,10 @@ const Blog = () => {
     return (
         <div className='total-blog-container'>
             {/* <img src={chef61} alt="" /> */}
-            <h2>Blog section</h2>
+            <h2>Blog Page</h2>
             <div className='blog-container'>
 
-                <h2>Question and Answers</h2>
+                <h2 className='h2'>Question and Answers</h2>
                 <div className='blog-all-texts'>
                     <h4>Question 1: Tell us the differences between uncontrolled and controlled components.</h4>
                     <p>Answer: In React, controlled components refer to components that have their state and behavior controlled by the parent component. These components rely on props passed down from the parent component to update their state and behavior. Uncontrolled components refer to components that manage their own state internally.</p>

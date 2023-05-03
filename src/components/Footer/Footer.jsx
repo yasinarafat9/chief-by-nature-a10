@@ -7,7 +7,7 @@ const Footer = () => {
     return (
         <div>
             <footer>
-                <h2>This is Footer</h2>
+
                 <div className=' footer-bg '>
                     <br />
                     <h2>Chef By Nature</h2>

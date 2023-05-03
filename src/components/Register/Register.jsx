@@ -2,17 +2,20 @@ import React, { useState } from 'react';
 import './Register.css'
 import { Link } from 'react-router-dom';
 // import { initializeApp } from "firebase/app";
-import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
+import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, signInWithPopup } from "firebase/auth";
 import app from '../../firebase/firebase.config';
+import { FaGoogle, FaGithub } from "react-icons/fa";
 
 
 const auth = getAuth(app);
+const provider = new GoogleAuthProvider();
 
 const Register = () => {
     // const [email, setEmail] = useState('');
     const [error, setError] = useState('');
     const [success, SetSuccess] = useState('');
-    
+    const [userImg, setUserImg] = useState('');
+
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -37,9 +40,28 @@ const Register = () => {
 
             });
 
+    }
 
+    const handleGoogle = () => {
+        signInWithPopup(auth, provider)
+            .then((result) => {
+                const credential = GoogleAuthProvider.credentialFromResult(result);
+                // const token = credential.accessToken;
+                const user = result.user;
+                console.log(user.photoURL
+                )
+                setUserImg(user.photoURL)
+            }).catch((error) => {
+                console.log('error', error.message)
+                // const errorCode = error.code;
+                // const errorMessage = error.message;
+                // const email = error.customData.email;
+                // const credential = GoogleAuthProvider.credentialFromError(error);
+                // ...
+            });
 
     }
+
 
 
 
@@ -58,15 +80,21 @@ const Register = () => {
                     <p className='text-danger'>{error}</p>
                     <p className='text-success'>{success}</p>
                     <button type='submit' className='btn btn-primary my-3'>Register</button>
-                    
+
 
                     <div>
                         <p className='mb-1 pb-0'>Already have an Account? </p>
                         <Link className='btn btn-link mt-0 pt-0' to="/login"> Log In</Link>
 
                     </div>
+                    <div>
+                        <p className='my-1'> <small>Or Register using...</small></p>
+                        <FaGoogle onClick={handleGoogle} className='fs-2 mx-2 text-danger' />
+                        <FaGithub className='fs-2 mx-2' />
+                        <img src={userImg} alt="" />
+                    </div>
                 </form>
-                
+
             </div>
         </div>
     );

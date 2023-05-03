@@ -1,17 +1,20 @@
 import React, { useState } from 'react';
 import './Login.css'
 import { Link } from 'react-router-dom';
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { GoogleAuthProvider, getAuth, signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 import app from '../../firebase/firebase.config';
+import { FaGoogle, FaGithub } from "react-icons/fa";
 
 
 const auth = getAuth(app);
+const provider = new GoogleAuthProvider();
 
 const Login = () => {
 
     const [error, setError] = useState('');
     const [success, SetSuccess] = useState('');
-    
+    const [userImg, setUserImg] = useState('');
+
 
     const handleLogin = (event) => {
         event.preventDefault();
@@ -19,7 +22,7 @@ const Login = () => {
         const email = event.target.email.value;
         const password = event.target.password.value;
         console.log(email, password)
-        
+
         setError('');
         SetSuccess('');
         signInWithEmailAndPassword(auth, email, password)
@@ -30,18 +33,31 @@ const Login = () => {
                 SetSuccess('Login Successfully')
             })
             .catch((error) => {
-                const errorCode = error.code;
+                // const errorCode = error.code;
                 const errorMessage = error.message;
                 setError(errorMessage);
             });
-
-
-
     }
 
+    const handleGoogle = () => {
+        signInWithPopup(auth, provider)
+            .then((result) => {
+                const credential = GoogleAuthProvider.credentialFromResult(result);
+                // const token = credential.accessToken;
+                const user = result.user;
+                console.log(user.photoURL
+                    )
+                    setUserImg(user.photoURL)
+            }).catch((error) => {
+                console.log('error', error.message)
+                // const errorCode = error.code;
+                // const errorMessage = error.message;
+                // const email = error.customData.email;
+                // const credential = GoogleAuthProvider.credentialFromError(error);
+                // ...
+            });
 
-
-
+    }
 
 
 
@@ -62,7 +78,12 @@ const Login = () => {
                     <div>
                         <p className='mb-1 pb-0'>New to this Website?</p>
                         <Link className='btn btn-link mt-0 pt-0' to="/register"> Create an Account </Link>
-
+                    </div>
+                    <div>
+                        <p className='my-1'> <small>Or Log In using...</small></p>
+                        <FaGoogle onClick={handleGoogle} className='fs-2 mx-2 text-danger' />
+                        <FaGithub className='fs-2 mx-2' />
+                        <img src={userImg} alt="" />
                     </div>
                 </form>
             </div>
@@ -70,4 +91,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default  Login;

@@ -19,7 +19,7 @@
     padding: 50px;
     margin: 150px auto;
     background-color: rgb(205, 227, 255);
-    height: 400px;
+    /* height: 400px; */
     width: 400px;
     box-shadow: -10px 10px 1px rgb(0, 110, 255);
 }

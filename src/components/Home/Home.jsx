@@ -35,7 +35,7 @@ const Home = () => {
             <br />
             <section>
                 <h2>Top Chefs</h2>
-                <div className='chef-cards-container m-4'>
+                <div className='chef-cards-container mx-auto m-4'>
                     {
                         chefs.map(chef => <div
                             key={chef.id}
@@ -44,9 +44,9 @@ const Home = () => {
                             <img src={chef.picture} alt="" />
                             <div className='chef-card-texts'>
                                 <h1>Name: {chef.chef_name}</h1>
-                                <h2>Years of Experience {chef.years_of_experience}</h2>
-                                <h2>Numbers of recipes {chef.num_recipes}</h2>
-                                <h2>Likes: {chef.likes}</h2>
+                                <h4>Years of Experience {chef.years_of_experience}</h4>
+                                <h4>Numbers of recipes {chef.num_recipes}</h4>
+                                <h4>Likes: {chef.likes}</h4>
                                 <Link to='/login'><button className='view-recipe-btn'>View Recipes</button></Link>
                                 {/* <a href={chef.view_recipes} target="_blank" > <button className='view-recipe-btn'>View Recipes</button></a> */}
                             </div>

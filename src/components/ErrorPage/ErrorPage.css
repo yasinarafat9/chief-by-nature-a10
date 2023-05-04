@@ -5,6 +5,9 @@
     border-radius: 5px;
     box-shadow: -10px 10px 1px rgb(43, 42, 40); */
 }
+.err img{
+    width: 800px;
+}
 
 .err h1 {
     font-size: 200px;

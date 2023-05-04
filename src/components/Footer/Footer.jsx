@@ -2,6 +2,7 @@ import React from 'react';
 import './Footer.css'
 import logos from '../../assets/images/logos .png'
 import { FaYoutube, FaFacebook, FaLinkedin, FaTwitterSquare } from "react-icons/fa";
+import Marquee from "react-fast-marquee";
 
 const Footer = () => {
     return (
@@ -12,11 +13,14 @@ const Footer = () => {
                     <br />
                     <h2>Chef By Nature</h2>
                     <br />
-                    <div className='d-flex mx-auto p-3 logos-bg'>
-                        <img src={logos} alt="" />
-                        <img src={logos} alt="" />
-                        <img src={logos} alt="" />
-                    </div>
+                    <Marquee speed={20}>
+                        <div className='d-flex logos-bg'>
+                            <img src={logos} alt="" />
+                            <img src={logos} alt="" />
+                            <img src={logos} alt="" />
+                        </div>
+                    </Marquee>
+
                     <br />
                     <div className=' mx-5 px-5'>
                         <div>

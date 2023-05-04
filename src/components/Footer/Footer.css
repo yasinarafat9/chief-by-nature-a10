@@ -8,15 +8,16 @@ footer{
     height: fit-content;
 
 }
-.logos-bg{
+/* .logos-bg{
     background-color: rgb(17, 17, 17);
-}
-.logos-bg:hover{
+} */
+/* .logos-bg:hover{
     background-color: rgb(29, 8, 8);
-}
+} */
 footer img{
     width: 390px;
-    opacity: 50%;
+    opacity: 30%;
+    margin: 5px;
 }
 .social-icons{
     font-size: 30px;
@@ -25,3 +26,4 @@ footer img{
 a{
     color: white;
 }
+
